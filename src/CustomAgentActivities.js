@@ -1,8 +1,9 @@
 import { VERSION } from '@twilio/flex-ui';
-import { FlexPlugin } from 'flex-plugin';
+import { FlexPlugin } from '@twilio/flex-plugin';
 import CustomizeFlexComponents from './flex-hooks/components';
 import ConfigureFlexStrings from './flex-hooks/strings';
 import RegisterFlexNotifications from './flex-hooks/notifications';
+import CustomizeGlobalStyles from './styles';
 
 import reducers, { namespace } from './states';
 
@@ -25,6 +26,7 @@ export default class CustomAgentActivities extends FlexPlugin {
     ConfigureFlexStrings(flex, manager);
     RegisterFlexNotifications(flex, manager);
     CustomizeFlexComponents(flex, manager);
+    CustomizeGlobalStyles();
   }
 
   /**
